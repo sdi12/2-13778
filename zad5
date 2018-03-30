@@ -1,0 +1,26 @@
+'''зад.5 Да се напише програма, която извежда TRUE , ако в записа на
+положително четирицифрено число, всички цифри са различни, и FALSE - в
+противен случай. При въвеждане на число, което не съответства на
+условието да се извежда съобщение за грешка (например: ако е въведено
+три цифрено число, реално число, текст…)'''
+def differentdigits(a):
+    b=True
+    chislo=[]
+    while(a!=0):
+        chislo.append(a%10)
+        a=int(a/10)
+        chislo.reverse()
+    for i in range(0,10):
+        if chislo.count(i)>1:
+            return False
+        else:
+            b=True
+    if b:
+        return True
+    else:
+        return False
+a=int(input())
+if a<1000 or a>9999:
+    print("Числото трябва да е положително четирицифрено число!")
+else:
+    print(differentdigits(a))
