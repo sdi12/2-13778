@@ -1,0 +1,13 @@
+'''зад.4 Да се напише програма, която изписва в обратен ред, въведено от
+клавиатурата цяло число'''
+a=int(input())
+chislo=[]
+b=0
+while(a!=0):
+    chislo.append(a%10)
+    a=int(a/10)
+x=10**len(chislo)
+for i in chislo:
+    b=b+i*x
+    x=x/10
+print(int(b/10))
